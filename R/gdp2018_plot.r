@@ -6,10 +6,10 @@ gdp2018_full |>
     x = "東京倍率",
     y = "県民経済計算"
   ) +
-  scale_y_continuous(labels = comma)+
+  scale_y_continuous(labels = scales::comma)+
   theme_bw() +
     facet_wrap(~gdp_j, scales = "free_y")
-ggsave("img/plot_gdp2018_tokyo_power_cv.png", width = 4000, height = 1800, units = "px")
+ggsave("inst/img/plot_gdp2018_tokyo_power_cv.png", width = 4000, height = 1800, units = "px")
 
 gdp2018_idx
 gdp2018_wide |>

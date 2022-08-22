@@ -47,3 +47,17 @@ read_data(
 ```{r}
 nhkcovid
 ```
+
+```{r}
+gdp2018_full |>
+  ggplot(aes(tokyo_power_cv, value)) +
+  geom_smooth(method = "lm") +
+  geom_point() +
+  labs(
+    x = "東京倍率",
+    y = "県民経済計算"
+  ) +
+  scale_y_continuous(labels = scales::comma)+
+  theme_bw() +
+    facet_wrap(~gdp_j, scales = "free_y")
+```

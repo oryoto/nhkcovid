@@ -1,7 +1,6 @@
 # 県内GDPのデータを抽出する
 gdp2018_origin <-
 read_data("inst/extdata", .ptn = "soukatu\\d{1,}_2018", sheet = "Sheet1")
-usethis::use_data(gdp2018_origin, overwrite = TRUE)
 
 # 2018年の列だけを取り出してまとめたい
 nm <- sprintf("gdp%d", 1:11) |> sort()
@@ -11,7 +10,7 @@ gdp2018_origin |>
   map2(.y = nm,
   ~ .x |> select(jpref, `2018`) |> rename("{.y}" := `2018`)) |>
   reduce(left_join, by = "jpref")
-usethis::use_data(gdp2018, overwrite = TRUE)
+usethis::use_data(gdp2018_origin, gdp2018, overwrite = TRUE, internal = TRUE)
 
 # 各列と統計の種類の索引
 gdp2018_nm <- names(gdp2018)

@@ -62,3 +62,22 @@ nhkcovid
 #> #   variable names ¹​tokyo_ratio, ²​tokyo_power, ³​pref_code, ⁴​case_day, ⁵​case_cum
 #> # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
+
+``` r
+gdp2018_full |>
+  ggplot(aes(tokyo_power_cv, value)) +
+  geom_smooth(method = "lm") +
+  geom_point() +
+  labs(
+    x = "東京倍率",
+    y = "県民経済計算"
+  ) +
+  scale_y_continuous(labels = scales::comma)+
+  theme_bw() +
+    facet_wrap(~gdp_j, scales = "free_y")
+#> `geom_smooth()` using formula 'y ~ x'
+#> Warning: Removed 11 rows containing non-finite values (stat_smooth).
+#> Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
