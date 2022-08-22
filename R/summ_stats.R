@@ -1,11 +1,15 @@
-# ### パネルデータのための便利な要約関数
-# 任意の1列に対して任意の複数の関数を適用する
-# `.data` データフレーム
-# `.col` 関数が適用される列
-# `...` 列に適用する関数たち
-# `.g` グループ
-# `.b = min(.data$date)` 期間はじめ
-# `.e = max(.data$date)` 期間おわり
+#' @title パネルデータのための便利な要約関数
+#'
+#' @description 任意の1列に対して任意の複数の関数を適用する
+#' @param `.data` データフレーム
+#' @param `.col` 関数が適用される列
+#' @param `...` 列に適用する関数たち
+#' @param `.g` グループ
+#' @param `.b = min(.data$date)` 期間はじめ
+#' @param `.e = max(.data$date)` 期間おわり
+#' @import rlang
+#' @importFrom dplyr group_by summarise across
+#' @export
 summ_stats <- \(.data, .col, ..., .g = pref,
  .b = min(.data$date), .e = max(.data$date)
 ) {

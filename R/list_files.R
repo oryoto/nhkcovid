@@ -1,9 +1,8 @@
-# ファイル検索のための便利な関数
-# 返り値＝文字列ベクトル
-# `.dir = NULL` ディレクトリ名。初期値`NULL`はダウンロードフォルダを検索する。
-# `.dir = "."`を指定するとワーキングディレクトリを検索する。
-# `.dir = "~"`を指定するとホームディレクトリを検索する。
-# `...` `list.files`のオプションに引き継がれる
+#' ファイル検索のための便利な関数
+#'
+#' @param `.dir = NULL` ディレクトリ名。初期値`NULL`はダウンロードフォルダを検索する。`.dir = "."`を指定するとワーキングディレクトリを検索する。' `.dir = "~"`を指定するとホームディレクトリを検索する。
+#' @param `...` `list.files`のオプションに引き継がれる
+#' @importFrom here here
 list_files <- \(.dir = NULL, ...) {
   if (is.null(.dir)) {
     paste0(Sys.getenv("HOME"), "/Downloads") |>
@@ -21,9 +20,9 @@ list_files <- \(.dir = NULL, ...) {
   }
   }
 
-list_files()
-list_files(pattern = "nhk")
-list_files(".")
+# list_files()
+# list_files(pattern = "nhk")
+# list_files(".")
 # list_files("~")
 # list_files("R")
 # list_files("data-raw", .ptn = "^nhk_covid\\.R")

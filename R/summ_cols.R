@@ -1,10 +1,14 @@
-# ### パネルデータのための便利な要約関数
-# 任意の複数列に対して`mean`、`sd`、`cv`を適用する
-# `.data` データフレーム
-# `...` 関数が適用される列たち。
-# `.g = pref` 行を分割するグループ。日本語が欲しい場合は`jpref`
-# `.b = min(.data$date)` 期間はじめ
-# `.e = max(.data$date)` 期間おわり
+#' @title パネルデータのための便利な要約関数
+#'
+#' @description 任意の複数列に対して`mean`、`sd`、`cv`を適用する
+#' @param `.data` データフレーム
+#' @param `...` 関数が適用される列たち。
+#' @param `.g = pref` 行を分割するグループ。日本語が欲しい場合は`jpref`
+#' @param `.b = min(.data$date)` 期間はじめ
+#' @param `.e = max(.data$date)` 期間おわり
+#' @import rlang
+#' @importFrom dplyr filter summarise group_by across
+#' @export
 summ_cols <- \(.data, ..., .g = pref,
   .b = min(.data$date), .e = max(.data$date)
 ) {

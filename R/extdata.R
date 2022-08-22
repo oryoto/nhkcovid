@@ -1,6 +1,9 @@
-# パッケージのextdataを見つける
-# `.pkg` パッケージ名
-# `...` `list.files`のオプションに引き継がれる。フルパスが欲しいときなどに利用
+#' @title パッケージのextdataを見つける
+#'
+#' @param .pkg パッケージ名
+#' @param ... `list.files`のオプションに引き継がれる。フルパスが欲しいときなどに利用
+#' @export
+#'
 extdata <- \(.pkg, ...) {
 find.package(pkg) |>
   list.files(pattern = "extdata", full.names = TRUE) |>

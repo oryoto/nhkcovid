@@ -1,13 +1,13 @@
-# ### データを呼び出す
-# 返り値：データフレームまたはデータフレームのリスト
-# パターンにマッチするファイルが2つ以上ある場合は、自動的にpurrr::mapが適用される。
-# 姉妹関数の`list_files`で目的パスのファイルを調べてから使うと便利。
-# `.dir = NULL` ディレクトリ名。初期値`NULL`はダウンロードフォルダを検索する。
-# `.dir = "."`を指定するとワーキングディレクトリを検索する。
-# `.dir = "~"`を指定するとホームディレクトリを検索する。
-# `.ptn` 必須。データ名のパターン
-# `.f = readxl::read_excel` 適用する関数
-# `...` `.f`に付与するオプション
+#' @title データを呼び出す
+#'
+#' @description パターンにマッチするファイルが2つ以上ある場合は、自動的にpurrr::mapが適用される。
+#' @param `.dir = NULL` ディレクトリ名。初期値`NULL`はダウンロードフォルダを検索する。`.dir = "."`を指定するとワーキングディレクトリを検索する。`.dir = "~"`を指定するとホームディレクトリを検索する。
+#' @param `.ptn` 必須。データ名のパターン
+#' @param `.f = readxl::read_excel` 適用する関数
+#' @param `...` `.f`に付与するオプション
+#' @importFrom purrr map
+#' @return データフレームまたはデータフレームのリスト
+#' @export
 read_data <- \(.dir = NULL, .ptn = NULL, .f = readxl::read_excel, ...) {
   if (is.null(.dir)) {
     .dir <- paste0(Sys.getenv("HOME"), "/Downloads") |>
