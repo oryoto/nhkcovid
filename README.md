@@ -24,33 +24,41 @@ devtools::install_github("MTRBEKTCBT/nhkcovid")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-# library(nhkcovid)
-## basic example code
-```
+library(nhkcovid)
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+nhkcovid_origin <-
+read_data(
+  .dir = here::here("inst/extdata"),
+  .ptn = "nhk_news",
+  .f = readr::read_csv
+)
+#> Rows: 44368 Columns: 8
+#> ── Column specification ──────────────────────
+#> Delimiter: ","
+#> chr (3): 日付, 都道府県コード, 都道府県名
+#> dbl (5): 各地の感染者数_1日ごとの発表数, 各地の感染者数_累計, 各地の死者数_1日ごとの発表数, 各地の死者数_累計, 各地の直近1週間の...
+#> 
+#> ℹ Use `spec()` to retrieve the full column specification for this data.
+#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+nhkcovid
+#> # A tibble: 44,368 × 15
+#>    date       rmean7 tokyo tokyo_r…¹ tokyo…² wday  pref_…³ jpref case_…⁴ case_…⁵
+#>    <date>      <dbl> <dbl>     <dbl>   <dbl> <ord> <chr>   <chr>   <dbl>   <dbl>
+#>  1 2020-01-16      0     0         0       0 木    01      北海…       0       0
+#>  2 2020-01-17      0     0         0       0 金    01      北海…       0       0
+#>  3 2020-01-18      0     0         0       0 土    01      北海…       0       0
+#>  4 2020-01-19      0     0         0       0 日    01      北海…       0       0
+#>  5 2020-01-20      0     0         0       0 月    01      北海…       0       0
+#>  6 2020-01-21      0     0         0       0 火    01      北海…       0       0
+#>  7 2020-01-22      0     0         0       0 水    01      北海…       0       0
+#>  8 2020-01-23      0     0         0       0 木    01      北海…       0       0
+#>  9 2020-01-24      0     1         0       0 金    01      北海…       0       0
+#> 10 2020-01-25      0     1         0       0 土    01      北海…       0       0
+#> # … with 44,358 more rows, 5 more variables: death_day <dbl>, death_cum <dbl>,
+#> #   case_per_hund_thd_week <dbl>, prefecture <chr>, pref <chr>, and abbreviated
+#> #   variable names ¹​tokyo_ratio, ²​tokyo_power, ³​pref_code, ⁴​case_day, ⁵​case_cum
+#> # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.

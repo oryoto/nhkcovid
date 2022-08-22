@@ -45,7 +45,7 @@ date <-
 # 1日ごとの東京比率を計算する
 # 東京倍率を計算する
 # 7日移動平均を計算する
-nhk_covid <-
+nhkcovid <-
   workdata |>
   left_join(e_pref, by = c("jpref" = "prefecture_kanji")) |>
   group_by(date) |>
@@ -65,7 +65,7 @@ nhk_covid <-
 
 # Test: 列に追加した東京都感染者数と
 # 元々の東京都感染者数が一致するか
-nhk_covid |>
+nhkcovid |>
   filter(pref == "Tokyo") |>
   select(tokyo, case_day) |>
   mutate(identical = if_all(.fns = ~!tokyo == case_day)) |>
@@ -73,5 +73,5 @@ nhk_covid |>
   pull() == 0
 
 # *************************************
-# nhk_covid <- workdata
-usethis::use_data(nhk_covid, overwrite = TRUE)
+# nhkcovid <- workdata
+usethis::use_data(nhkcovid, overwrite = TRUE)
