@@ -74,7 +74,7 @@ gdp2018_full |>
   ) +
   scale_y_continuous(labels = scales::comma)+
   theme_bw() +
-    facet_wrap(~gdp_j, scales = "free_y")
+    facet_wrap(~gdp, scales = "free_y")
 #> `geom_smooth()` using formula 'y ~ x'
 #> Warning: Removed 11 rows containing non-finite values (stat_smooth).
 #> Warning: Removed 11 rows containing missing values (geom_point).

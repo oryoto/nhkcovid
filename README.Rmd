@@ -59,5 +59,5 @@ gdp2018_full |>
   ) +
   scale_y_continuous(labels = scales::comma)+
   theme_bw() +
-    facet_wrap(~gdp_j, scales = "free_y")
+    facet_wrap(~gdp, scales = "free_y")
 ```
