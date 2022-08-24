@@ -20,5 +20,12 @@ summ_fun(.data, ..., .f, .g = pref, .b = min(.data$date), .e = max(.data$date))
 \item{`.e}{= max(.data$date)` 期間おわり}
 }
 \description{
-任意の複数列に対して任意の関数1つを適用する
+パネルデータのための便利な要約関数。
+任意の複数列に対して任意の関数1つを適用する。
+\code{.data} はデータフレーム。
+\code{...} は関数が適用される列たち。
+\code{.f} は列に適用する関数。
+\code{.g} はグループ。
+\code{.b = min(.data$date)} は期間はじめ。
+\code{.e = max(.data$date)} は期間おわり。
 }
