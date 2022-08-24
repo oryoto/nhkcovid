@@ -27,5 +27,12 @@ summ_stats(
 \item{`.e}{= max(.data$date)` 期間おわり}
 }
 \description{
-任意の1列に対して任意の複数の関数を適用する
+パネルデータのための便利な要約関数。
+任意の1列に対して任意の複数の関数を適用する。
+\code{.data} はデータフレーム。
+\code{.col} は関数が適用される列。
+\code{...} は列に適用する関数たち。
+\code{.g} はグループ。
+\code{.b = min(.data$date)} は期間はじめ。
+\code{.e = max(.data$date)} は期間おわり。
 }

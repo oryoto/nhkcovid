@@ -18,5 +18,10 @@ summ_cols(.data, ..., .g = pref, .b = min(.data$date), .e = max(.data$date))
 \item{`.e}{= max(.data$date)` 期間おわり}
 }
 \description{
-任意の複数列に対して\code{mean}、\code{sd}、\code{cv}を適用する
+任意の複数列に対して\code{mean}、\code{sd}、\code{cv}を適用する。
+\code{.data} はデータフレーム。
+\code{...} は関数が適用される列たち。
+\code{.g = pref} は行を分割するグループ。日本語が欲しい場合は\code{jpref}とする。
+\code{.b = min(.data$date)} は期間はじめ。
+\code{.e = max(.data$date)} は期間おわり。
 }
