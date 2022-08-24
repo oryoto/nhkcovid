@@ -1,11 +1,11 @@
-library(dplyr)
+library(tidyverse)
 library(lubridate)
 library(zipangu)
 source("R/utils.R")
 
 origin <-
 read_data(
-  .dir = here::here("inst/extdata"),
+  .dir = "inst/extdata",
   .ptn = "nhk_news",
   .f = readr::read_csv
 )

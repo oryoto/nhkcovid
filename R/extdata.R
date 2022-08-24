@@ -9,4 +9,4 @@ find.package(pkg) |>
   list.files(pattern = "extdata", full.names = TRUE) |>
   list.files(...)
 }
-# extdata("readr", full.names = TRUE)
+# extdata("readr", full.names = TRUE
