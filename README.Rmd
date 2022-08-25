@@ -26,7 +26,7 @@ You can install the development version of nhkcovid from [GitHub](https://github
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("MTRBEKTCBT/nhkcovid")
+devtools::install_github("oryoto/nhkcovid")
 ```
 
 ## Example
@@ -49,6 +49,8 @@ nhkcovid
 ```
 
 ```{r}
+library(ggplot2)
+
 gdp2018_full |>
   ggplot(aes(tokyo_power_cv, value)) +
   geom_smooth(method = "lm") +
