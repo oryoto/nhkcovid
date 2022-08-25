@@ -45,18 +45,19 @@ read_data <- \(.dir = NULL, .ptn = NULL, .f = readxl::read_excel, ...) {
 # list_files(.ptn = "^soukatu2_2018")
 # read_data(.ptn = "^soukatu2_2018", sheet = "Sheet1")
 
-# パッケージに同梱されているデータを読み込む
-# 依存： `read_data` `extdata`
-# 返り値： データフレーム
-# `.pkg` パッケージ名
-# `.ptn` ファイル名のパターン。`extdata(.pkg)`でファイル名一覧を取得できる。
-# `.f = read.csv` 読み込みに利用する関数。
-# `...` 読み込み関数のオプション
-read_pkg_data <- \(.pkg, .ptn, .f = read.csv, ...) {
-  .dir <- paste0(find.package(.pkg), "/extdata")
-  .file <- extdata(.pkg) |> stringr::str_subset(.ptn)
-  read_data(.dir, .ptn = .file, .f = .f, ...)
+#' パッケージに同梱されているデータを読み込む
+#'
+#' 依存： `read_data` `extdata`
+#' 返り値： データフレーム
+#' `.pkg` パッケージ名
+#' `.ptn` ファイル名のパターン。`extdata(.pkg)`でファイル名一覧を取得できる。
+#' `.f = read.csv` 読み込みに利用する関数。
+#' `...` 読み込み関数のオプション
+pkg_data <- \(.pkg, .ptn, .f = read.csv, .dir = "/extdata", ...) {
+  dir <- paste0(find.package(.pkg), .dir)
+  file <- extdata(.pkg) |> stringr::str_subset(.ptn)
+  read_data(dir, .ptn = file, .f = .f, ...)
 }
 
-# read_pkg_data("readr", "^challenge", .f = readr::read_csv)
+# pkg_data("readr", "^challenge", .f = readr::read_csv)
 
