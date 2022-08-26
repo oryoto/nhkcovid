@@ -1,7 +1,7 @@
 #' パッケージのextdataを見つける
 #'
 #' @param .pkg パッケージ名
-#' @param ... `list.files`のオプションに引き継がれる。フルパスが欲しいときなどに利用
+#' @param ... \code{list.files}のオプションに引き継がれる。フルパスが欲しいときなどに利用
 #' @export
 #'
 extdata <- \(.pkg, ...) {

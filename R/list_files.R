@@ -1,7 +1,7 @@
 #' ファイル検索のための便利な関数
 #'
-#' @param `.dir = NULL` ディレクトリ名。初期値`NULL`はダウンロードフォルダを検索する。`.dir = "."`を指定するとワーキングディレクトリを検索する。' `.dir = "~"`を指定するとホームディレクトリを検索する。
-#' @param `...` `list.files`のオプションに引き継がれる
+#' @param \code{.dir = NULL} ディレクトリ名。初期値\code{NULL}はダウンロードフォルダを検索する。\code{.dir = "."}を指定するとワーキングディレクトリを検索する。' \code{.dir = "~"}を指定するとホームディレクトリを検索する。
+#' @param \code{...} \code{list.files}のオプションに引き継がれる
 #' @importFrom here here
 list_files <- \(.dir = NULL, ...) {
   if (is.null(.dir)) {
@@ -16,7 +16,7 @@ list_files <- \(.dir = NULL, ...) {
   } else if (is.character(.dir)) {
     list.files(.dir, ...)
   } else {
-    stop("`.dir` は文字列を渡してください。")
+    stop("\code{.dir} は文字列を渡してください。")
   }
   }
 

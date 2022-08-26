@@ -2,18 +2,18 @@
 #'
 #' パネルデータのための便利な要約関数。
 #' 任意の1列に対して任意の複数の関数を適用する。
-#' `.data` はデータフレーム。
-#' `.col` は関数が適用される列。
-#' `...` は列に適用する関数たち。
-#' `.g` はグループ。
-#' `.b = min(.data$date)` は期間はじめ。
-#' `.e = max(.data$date)` は期間おわり。
-#' @param `.data` データフレーム
-#' @param `.col` 関数が適用される列
-#' @param `...` 列に適用する関数たち
-#' @param `.g` グループ
-#' @param `.b = min(.data$date)` 期間はじめ
-#' @param `.e = max(.data$date)` 期間おわり
+#' \code{.data} はデータフレーム。
+#' \code{.col} は関数が適用される列。
+#' \code{...} は列に適用する関数たち。
+#' \code{.g} はグループ。
+#' \code{.b = min(.data$date)} は期間はじめ。
+#' \code{.e = max(.data$date)} は期間おわり。
+#' @param \code{.data} データフレーム
+#' @param \code{.col} 関数が適用される列
+#' @param \code{...} 列に適用する関数たち
+#' @param \code{.g} グループ
+#' @param \code{.b = min(.data$date)} 期間はじめ
+#' @param \code{.e = max(.data$date)} 期間おわり
 #' @import rlang
 #' @importFrom dplyr group_by summarise across
 #' @export

@@ -1,16 +1,16 @@
 #' パネルデータのための便利な要約関数
 #'
-#' 任意の複数列に対して`mean`、`sd`、`cv`を適用する。
-#' `.data` はデータフレーム。
-#' `...` は関数が適用される列たち。
-#' `.g = pref` は行を分割するグループ。日本語が欲しい場合は`jpref`とする。
-#' `.b = min(.data$date)` は期間はじめ。
-#' `.e = max(.data$date)` は期間おわり。
-#' @param `.data` データフレーム
-#' @param `...` 関数が適用される列たち。
-#' @param `.g = pref` 行を分割するグループ。日本語が欲しい場合は`jpref`
-#' @param `.b = min(.data$date)` 期間はじめ
-#' @param `.e = max(.data$date)` 期間おわり
+#' 任意の複数列に対して\code{mean}、\code{sd}、\code{cv}を適用する。
+#' \code{.data} はデータフレーム。
+#' \code{...} は関数が適用される列たち。
+#' \code{.g = pref} は行を分割するグループ。日本語が欲しい場合は\code{jpref}とする。
+#' \code{.b = min(.data$date)} は期間はじめ。
+#' \code{.e = max(.data$date)} は期間おわり。
+#' @param \code{.data} データフレーム
+#' @param \code{...} 関数が適用される列たち。
+#' @param \code{.g = pref} 行を分割するグループ。日本語が欲しい場合は\code{jpref}
+#' @param \code{.b = min(.data$date)} 期間はじめ
+#' @param \code{.e = max(.data$date)} 期間おわり
 #' @import rlang
 #' @importFrom dplyr filter summarise group_by across
 #' @export
