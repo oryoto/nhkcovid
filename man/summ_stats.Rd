@@ -14,17 +14,17 @@ summ_stats(
 )
 }
 \arguments{
-\item{`.data`}{データフレーム}
+\item{.data}{データフレーム}
 
-\item{`.col`}{関数が適用される列}
+\item{.col}{関数が適用される列}
 
-\item{`...`}{列に適用する関数たち}
+\item{...}{列に適用する関数たち}
 
-\item{`.g`}{グループ}
+\item{.g}{グループ}
 
-\item{`.b}{= min(.data$date)` 期間はじめ}
+\item{.b}{min(.data$date) 期間はじめ}
 
-\item{`.e}{= max(.data$date)` 期間おわり}
+\item{.e}{max(.data$date) 期間おわり}
 }
 \description{
 パネルデータのための便利な要約関数。

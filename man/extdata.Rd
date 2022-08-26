@@ -14,3 +14,6 @@ extdata(.pkg, ...)
 \description{
 パッケージのextdataを見つける
 }
+\examples{
+extdata("readr", full.names = TRUE)
+}

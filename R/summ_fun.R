@@ -8,12 +8,12 @@
 #' \code{.g} はグループ。
 #' \code{.b = min(.data$date)} は期間はじめ。
 #' \code{.e = max(.data$date)} は期間おわり。
-#' @param \code{.data} データフレーム
-#' @param \code{...} 関数が適用される列たち
-#' @param \code{.f} 列に適用する関数
-#' @param \code{.g} グループ
-#' @param \code{.b = min(.data$date)} 期間はじめ
-#' @param \code{.e = max(.data$date)} 期間おわり
+#' @param .data データフレーム
+#' @param ... 関数が適用される列たち
+#' @param .f 列に適用する関数
+#' @param .g グループ
+#' @param .b min(.data$date) 期間はじめ
+#' @param .e max(.data$date) 期間おわり
 #' @importFrom dplyr filter group_by summarise
 #' @import rlang
 #' @export

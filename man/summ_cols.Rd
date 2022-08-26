@@ -7,15 +7,15 @@
 summ_cols(.data, ..., .g = pref, .b = min(.data$date), .e = max(.data$date))
 }
 \arguments{
-\item{`.data`}{データフレーム}
+\item{.data}{データフレーム}
 
-\item{`...`}{関数が適用される列たち。}
+\item{...}{関数が適用される列たち。}
 
-\item{`.g}{= pref\verb{ 行を分割するグループ。日本語が欲しい場合は}jpref`}
+\item{.g}{pref 行を分割するグループ。日本語が欲しい場合は\code{jpref}}
 
-\item{`.b}{= min(.data$date)` 期間はじめ}
+\item{.b}{min(.data$date) 期間はじめ}
 
-\item{`.e}{= max(.data$date)` 期間おわり}
+\item{.e}{max(.data$date) 期間おわり}
 }
 \description{
 任意の複数列に対して\code{mean}、\code{sd}、\code{cv}を適用する。

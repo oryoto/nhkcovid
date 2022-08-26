@@ -7,10 +7,19 @@
 list_files(.dir = NULL, ...)
 }
 \arguments{
-\item{`.dir}{= NULL\verb{ ディレクトリ名。初期値}NULL\verb{はダウンロードフォルダを検索する。}.dir = "."\verb{を指定するとワーキングディレクトリを検索する。' }.dir = "~"`を指定するとホームディレクトリを検索する。}
+\item{.dir}{NULL ディレクトリ名。初期値\code{NULL}はダウンロードフォルダを検索する。\code{.dir = "."}を指定するとワーキングディレクトリを検索する。' \code{.dir = "~"}を指定するとホームディレクトリを検索する。}
 
-\item{`...`}{\code{list.files}のオプションに引き継がれる}
+\item{...}{\code{list.files}のオプションに引き継がれる。これは\code{list.files}の\code{pattern}引数の使用を想定している。}
 }
 \description{
 ファイル検索のための便利な関数
+}
+\examples{
+list_files()
+list_files(pattern = "nhk")
+list_files(".")
+list_files("~")
+list_files("R")
+list_files("data-raw", .ptn = "^nhk_covid\\\\.R")
+list_files(1)
 }

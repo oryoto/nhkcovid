@@ -7,20 +7,20 @@
 read_data(.dir = NULL, .ptn = NULL, .f = readxl::read_excel, ...)
 }
 \arguments{
-\item{`.dir}{= NULL\verb{ ディレクトリ名。初期値}NULL\verb{はダウンロードフォルダを検索する。}.dir = "."\verb{を指定するとワーキングディレクトリを検索する。}.dir = "~"`を指定するとホームディレクトリを検索する。}
+\item{.dir}{NULL ディレクトリ名。初期値\code{NULL}はダウンロードフォルダを検索する。\code{.dir = "."}を指定するとワーキングディレクトリを検索する。\code{.dir = "~"}を指定するとホームディレクトリを検索する。}
 
-\item{`.ptn`}{必須。データ名のパターン}
+\item{.ptn}{必須。データ名のパターン}
 
-\item{`.f}{= readxl::read_excel` 適用する関数}
+\item{.f}{readxl::read_excel 適用する関数}
 
-\item{`...`}{\code{.f}に付与するオプション}
+\item{...}{\code{.f}に付与するオプション}
 }
 \value{
 データフレームまたはデータフレームのリスト
 }
 \description{
 データを呼び出す。
-パターンにマッチするファイルが2つ以上ある場合は、自動的にpurrr::mapが適用される。
+パターンにマッチするファイルが2つ以上ある場合は、自動的に\code{purrr::map}が適用される。
 返り値：データフレームまたはデータフレームのリスト
 パターンにマッチするファイルが2つ以上ある場合は、自動的にpurrr::mapが適用される。
 姉妹関数の\code{list_files}で目的パスのファイルを調べてから使うと便利。
@@ -30,4 +30,8 @@ read_data(.dir = NULL, .ptn = NULL, .f = readxl::read_excel, ...)
 \code{.ptn} 必須。データ名のパターン
 \code{.f = readxl::read_excel} 適用する関数
 \code{...} \code{.f}に付与するオプション
+}
+\examples{
+read_data(.dir = "inst/extdata", .ptn = "soukatu._2018", sheet = "Sheet1")
+read_data(.ptn = "^soukatu2_2018", sheet = "Sheet1")
 }

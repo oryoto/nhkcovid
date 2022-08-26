@@ -7,17 +7,17 @@
 summ_fun(.data, ..., .f, .g = pref, .b = min(.data$date), .e = max(.data$date))
 }
 \arguments{
-\item{`.data`}{データフレーム}
+\item{.data}{データフレーム}
 
-\item{`...`}{関数が適用される列たち}
+\item{...}{関数が適用される列たち}
 
-\item{`.f`}{列に適用する関数}
+\item{.f}{列に適用する関数}
 
-\item{`.g`}{グループ}
+\item{.g}{グループ}
 
-\item{`.b}{= min(.data$date)` 期間はじめ}
+\item{.b}{min(.data$date) 期間はじめ}
 
-\item{`.e}{= max(.data$date)` 期間おわり}
+\item{.e}{max(.data$date) 期間おわり}
 }
 \description{
 パネルデータのための便利な要約関数。
