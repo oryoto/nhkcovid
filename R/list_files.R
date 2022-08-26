@@ -1,8 +1,16 @@
 #' ファイル検索のための便利な関数
 #'
-#' @param \code{.dir = NULL} ディレクトリ名。初期値\code{NULL}はダウンロードフォルダを検索する。\code{.dir = "."}を指定するとワーキングディレクトリを検索する。' \code{.dir = "~"}を指定するとホームディレクトリを検索する。
-#' @param \code{...} \code{list.files}のオプションに引き継がれる
+#' @param .dir NULL ディレクトリ名。初期値\code{NULL}はダウンロードフォルダを検索する。\code{.dir = "."}を指定するとワーキングディレクトリを検索する。' \code{.dir = "~"}を指定するとホームディレクトリを検索する。
+#' @param ... \code{list.files}のオプションに引き継がれる。これは\code{list.files}の\code{pattern}引数の使用を想定している。
 #' @importFrom here here
+#' @examples
+#' list_files()
+#' list_files(pattern = "nhk")
+#' list_files(".")
+#' list_files("~")
+#' list_files("R")
+#' list_files("data-raw", .ptn = "^nhk_covid\\.R")
+#' list_files(1)
 list_files <- \(.dir = NULL, ...) {
   if (is.null(.dir)) {
     paste0(Sys.getenv("HOME"), "/Downloads") |>
@@ -16,14 +24,7 @@ list_files <- \(.dir = NULL, ...) {
   } else if (is.character(.dir)) {
     list.files(.dir, ...)
   } else {
-    stop("\code{.dir} は文字列を渡してください。")
+    stop(".dirは文字列を渡してください。")
   }
   }
 
-# list_files()
-# list_files(pattern = "nhk")
-# list_files(".")
-# list_files("~")
-# list_files("R")
-# list_files("data-raw", .ptn = "^nhk_covid\\.R")
-# list_files(1)

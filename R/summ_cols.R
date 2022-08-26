@@ -6,11 +6,11 @@
 #' \code{.g = pref} は行を分割するグループ。日本語が欲しい場合は\code{jpref}とする。
 #' \code{.b = min(.data$date)} は期間はじめ。
 #' \code{.e = max(.data$date)} は期間おわり。
-#' @param \code{.data} データフレーム
-#' @param \code{...} 関数が適用される列たち。
-#' @param \code{.g = pref} 行を分割するグループ。日本語が欲しい場合は\code{jpref}
-#' @param \code{.b = min(.data$date)} 期間はじめ
-#' @param \code{.e = max(.data$date)} 期間おわり
+#' @param .data データフレーム
+#' @param ... 関数が適用される列たち。
+#' @param .g pref 行を分割するグループ。日本語が欲しい場合は\code{jpref}
+#' @param .b min(.data$date) 期間はじめ
+#' @param .e max(.data$date) 期間おわり
 #' @import rlang
 #' @importFrom dplyr filter summarise group_by across
 #' @export
