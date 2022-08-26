@@ -18,7 +18,6 @@
 #' @importFrom purrr map
 #' @return データフレームまたはデータフレームのリスト
 #' @examples
-#' read_data(.dir = "inst/extdata", .ptn = "soukatu1_2018", sheet = "Sheet1")
 #' read_data(.ptn = "^soukatu2_2018", sheet = "Sheet1")
 #' @export
 read_data <- \(.dir = NULL, .ptn = NULL, .f = readxl::read_excel, ...) {
